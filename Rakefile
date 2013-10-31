@@ -2,6 +2,7 @@ require "rubygems"
 require 'rake'
 require 'yaml'
 require 'time'
+require 'ruby-pinyin'
 
 SOURCE = "."
 CONFIG = {
@@ -47,7 +48,8 @@ task :post do
   title = ENV["title"] || "new-post"
   tags = ENV["tags"] || "[]"
   category = ENV["category"] || ""
-  slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  slug = PinYin.permlink(title)
+  slug = slug.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   begin
     date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
   rescue => e
