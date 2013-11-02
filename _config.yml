@@ -10,10 +10,10 @@ gems: ["ruby-pinyin"]
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : 我的博客
+title : 南瓜马车
 tagline: Site Tagline
 author :
-  name : 精品真丝
+  name : 南瓜马车魔法袋
   email : lcq20130112@icloud.com
   github : nanguamache
   twitter : Liucaiqin
